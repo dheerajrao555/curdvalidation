@@ -1,0 +1,35 @@
+<h3>Update</h3>
+<form #myForm="ngForm">
+  <div class="container">
+
+    <div class="row">
+      <div *ngFor="let list of storeId">
+        <input  ngModel name="id" class="form-control" [(ngModel)]="list.id">
+        Name<input type="text" ngModel name="name" class="form-control"[(ngModel)]="list.name">
+        email:<input type="text" ngModel name="email" class="form-control" [(ngModel)]="list.email">
+        ph:<input type="text" ngModel class="form-control" name="ph" [(ngModel)]="list.ph">
+        <!-- <div *ngFor="let details of list.addressInfo"> -->
+            <!-- address:<input type="text" ngModel class="form-control" name="address" [(ngModel)]="details.address">
+        city:<input type="text" ngModel class="form-control" name="city" [(ngModel)]="details.city">
+
+        pincode:<input type="text" class="form-control" name="pincode" [(ngModel)]="details.pincode"> -->
+
+        </div>
+
+        <button type="btn btn-success" (click)="updateDetails(myForm.value)">update</button>
+
+
+        <!-- ph:<input type="text" class="form-control" [(ngModel)]="storeId"> -->
+        <!-- <div  *ngFor="let details of list.addressInfo">
+            address:<input type="text" class="form-control" [(ngModel)]="details.address">
+
+
+        </div> -->
+      </div>
+    </div>
+
+
+
+</form>
+
+

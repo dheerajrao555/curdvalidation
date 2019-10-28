@@ -1,0 +1,35 @@
+<form  [formGroup]="insert">
+  <div class="container">
+   Name:<input type="text" class="form-control distance" formControlName="name" >
+
+
+    <div style=color:red *ngIf="insert.get('name').hasError('required') && insert.get('name').touched">
+        please enter name
+    </div>
+
+    <span style=color:red *ngIf="insert.get('name').hasError('minlength')">
+      please enter atleast 3 char
+    </span>
+<label for="email">Email</label>
+   <input type="email" class="form-control distance" formControlName="email">
+    <span style=color:red *ngIf="insert.get('email').hasError('pattern')">
+        please enter valid email
+      </span>
+
+     PHONE: <input  type="text" class="form-control distance" formControlName="ph"  >
+    <!-- <span style=color:red *ngIf="insert.get('phone').hasError('pattern')">
+        please enter valid ph number
+      </span> -->
+      <div formGroupName="addressInfo">
+     Address <input type="textarea"  class="form-control distance" formControlName="address">
+      City  <input type="city"  class="form-control distance" formControlName="city">
+       pincode <input type="text"  class="form-control distance" formControlName="pincode">
+
+
+      </div>
+    <button type="button"  [disabled]="insert.invalid"  (click)="insertion(insert.value) "  class="btn btn-primary">Submit</button>
+
+    <div  #alert class="alert alert-warning alert-dismissible fade show" role="alert"></div>
+  </div>
+
+</form>
